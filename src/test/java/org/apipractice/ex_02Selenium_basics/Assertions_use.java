@@ -17,6 +17,7 @@ public class Assertions_use {
         driver.get("https://www.google.com");
 
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.google.com/");
+        // we can use AssertJ also directly
          assertThat(driver.getCurrentUrl()).isNotBlank().isNotNull().isEqualTo("https://www.google.com/");
 
         driver.quit();
