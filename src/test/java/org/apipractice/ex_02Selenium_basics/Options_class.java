@@ -1,6 +1,8 @@
 package org.apipractice.ex_02Selenium_basics;
 
 import io.qameta.allure.Description;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.Test;
@@ -10,7 +12,7 @@ public class Options_class {
     @Description("Options class")
     @Test
     public void test() throws Exception {
-        EdgeOptions edgeoptions = new EdgeOptions();
+        ChromeOptions edgeoptions = new ChromeOptions();
         // FirefoxOptions, ChromeOptions, SafariOptions
 
         // EdgeOptions -> It will help you set the browser
@@ -32,7 +34,7 @@ public class Options_class {
 
 
 
-        EdgeDriver driver = new EdgeDriver();
+        ChromeDriver driver = new ChromeDriver();
 
         Thread.sleep(5000);
         driver.quit();
