@@ -44,6 +44,9 @@ public class TestSel_project1_use_explicit_wait {
 
 
             WebElement error_message = driver.findElement(By.className("notification-box-description"));
+
+         //   wait.until(ExpectedConditions.textToBePresentInElement(error_message,"Your email, password, IP address or location did not match"));
+
             Assert.assertEquals(error_message.getText(),"Your email, password, IP address or location did not match");
 
             driver.quit();
