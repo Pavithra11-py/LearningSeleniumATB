@@ -8,25 +8,21 @@ import org.testng.annotations.Test;
 
 public class TestCaseBoilerPlate {
 
-    ChromeDriver driver;
+     public   ChromeDriver driver;
+    public  ChromeOptions options;
     @BeforeTest
     public void openBrowser() {
-        ChromeOptions options = new ChromeOptions();
+       options = new ChromeOptions();
         options.addArguments("--guest");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
 
-    @Test
-    public void test() throws Exception{
-
-
-    }
 
 
 
     @AfterTest
-    public void cloaseBrowser() {
+    public void closeBrowser() {
 
         try{
             Thread.sleep(3000);
