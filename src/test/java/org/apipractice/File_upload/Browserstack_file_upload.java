@@ -3,6 +3,7 @@ package org.apipractice.File_upload;
 import org.apipractice.TestCaseBoilerPlate;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -26,10 +27,13 @@ public class Browserstack_file_upload  extends TestCaseBoilerPlate{
         passw.sendKeys("Pav12345");
 
         WebElement sign_mein = driver.findElement(By.xpath("//input[@data-faitracker-input-id=\"form-1.field-6\"]"));
-        sign_mein.click();
+        Actions actions = new Actions(driver);
+        actions.moveToElement(sign_mein).click().build().perform();
         waitJVM(5000);
 
-        WebElement input = driver.findElement(By.xpath("//form[@id=\"upload_form\"]/input"));
+        //*[@id="upload_form"]/button/span
+        //"//form[@id=\"upload_form\"]/input"
+        WebElement input = driver.findElement(By.id("file"));
         input.click();
 
         String working_dir = System.getProperty("user.dir");

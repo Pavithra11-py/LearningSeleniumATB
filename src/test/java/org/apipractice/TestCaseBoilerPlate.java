@@ -14,6 +14,9 @@ public class TestCaseBoilerPlate {
     public void openBrowser() {
        options = new ChromeOptions();
         options.addArguments("--guest");
+       // options.addArguments("--incognito");
+        options.addArguments("start-maximized");
+
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
